@@ -30,6 +30,21 @@
 		<servlet-class>com.lin.shiro.servlet.InitServlet</servlet-class>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>TestServlet</display-name>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.lin.shiro.servlet.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InitServlet</servlet-name>
+		<url-pattern>/init</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
 	
 	<!-- 配置字符编码过滤器 -->
 	<!-- 字符编码过滤器必须配置在所有过滤器的最前面! -->

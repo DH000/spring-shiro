@@ -100,6 +100,14 @@
 		<property name="sessionValidationSchedulerEnabled" value="true" />
 		<!-- sessionIdCookie自动的实现,用于重写覆盖容器默认的JSESSIONID -->
 		<property name="sessionDAO" ref="redisSessionDao" />
+		<property name="sessionIdCookie" ref="sessionCookie" />
+	</bean>
+	<bean id="sessionCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+		<!-- rememberMe是cookie的名字 -->
+		<constructor-arg value="SHIRO_SESSION" />
+		<!-- 记住我cookie生效时间30 -->
+		<property name="maxAge" value="180" />
+		<property name="httpOnly" value="true" />
 	</bean>
 
 	<!-- redis -->
